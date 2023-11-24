@@ -2,7 +2,7 @@ const Footer = () => {
     return (
         <footer className="footer footer-center mt-12 p-10 bg-black text-primary-content">
             <aside>
-                <img src="/src/assets/MediCamp_Care.png" className="w-48" alt="" />
+                <img src="/src/assets/MediCamp_Care.png" className="w-36" alt="" />
                 <p className="font-bold">
                 MediCamp Care <br />Providing medical services since 2023
                 </p>
