@@ -9,7 +9,6 @@ const Home = () => {
             <Helmet>
                 <title>MedCare | Home </title>
             </Helmet>
-
             <Banner></Banner>
             <PopularCamps></PopularCamps>
         </div>
