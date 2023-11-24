@@ -8,7 +8,7 @@ import banner4 from '../../../assets/Banners/medical camps banner 04.jpg'
 const Banner = () => {
     return (
         <Carousel>
-            <div className="h-[480px]">
+            <div className="md:h-[480px]">
                 <img src={banner1} />
             </div>
             <div className="h-[480px]">
