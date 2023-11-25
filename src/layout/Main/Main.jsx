@@ -8,7 +8,9 @@ const Main = () => {
     const noFooter =  location.pathname.includes('login') || location.pathname.includes('register');
     return (
         <div>
-            <NavBar></NavBar>
+            {
+                noFooter || <NavBar></NavBar>
+            }
             <Outlet></Outlet>
             {
                 noFooter || <Footer></Footer>
