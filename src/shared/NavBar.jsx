@@ -51,12 +51,13 @@ const NavBar = () => {
                             </label>
                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-[#11e4a5] bg-opacity-40 rounded-box w-52">
                                 <li>
-                                    <div className="w-16 h-16 mx-auto">
-                                        <img className="w-12 h-12 rounded-full" src={user.photoURL} alt="" />
+                                    <div className="w-20 h-20 mx-auto">
+                                        <img className="w-14 h-12 rounded-full" src={user.photoURL} alt="" />
                                     </div>
+                                    <p className="text-black font-bold bg-green-800 text-center text-2xl">{user.displayName}</p>
                                 </li>
-                                <li>
-                                    <p className="text-black font-bold text-center">{user.email}</p>
+                                <li className="text-center">
+                                    <p className="text-black font-bold bg-green-800 text-center text-2xl">{user.displayName}</p>
                                 </li>
                                 <li>
                                     <button onClick={handleLogOut} className="btn bg-transparent border-0 text-center font-bold text-black">LogOut</button>
