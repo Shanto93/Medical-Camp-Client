@@ -10,11 +10,13 @@ const PopularCampLayout = ({ camp }) => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{camp_name}</h2>
                 <p>{venue}</p>
-                <p>Time:{scheduled_date}, {scheduled_time}</p>
-                <div className="flex-col md:flex-row">
+                <p><span className="font-semibold">Time:</span>{scheduled_date}, {scheduled_time}</p>
+                <div>
                     <p>For {target_audience}</p>
-                    <p>{camp_fees}</p>
+                    <p><span className="font-semibold">Fees:</span> {camp_fees}</p>
                 </div>
+                <p>{specialized_service}</p>
+                <p>{healthcare_professionals}</p>
                 {/* <p>{
                     long_des.length>20? 
                     <p>{long_des.slice(0,20)} <span>more...</span></p>:''
