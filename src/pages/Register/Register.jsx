@@ -49,7 +49,6 @@ const Register = () => {
                             name: name,
                             photo: photo,
                             email: email,
-                            camp_name: camp_name
                         }
 
                         axiosPublic.post('/users', userInfo)

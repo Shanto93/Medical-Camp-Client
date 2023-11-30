@@ -5,15 +5,24 @@ import Main from "../layout/Main/Main";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Home/Login/Login";
 import Register from "../pages/Register/Register";
+import PopularCampDetails from "../pages/Home/PopularCamps/PopularCampLayout/PopularCampDetails/PopularCampDetails";
+import Errorpage from "../components/SectionTitle/Errorpage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
+        errorElement:<Errorpage></Errorpage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
+            },
+            {
+                path:'/popularcamp/:_id',
+                element:<PopularCampDetails></PopularCampDetails>,
+                loader: () => fetch('http://localhost:5000/popularcamp'),
+
             },
             {
                 path:'/login',

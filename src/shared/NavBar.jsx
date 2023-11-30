@@ -54,10 +54,10 @@ const NavBar = () => {
                                     <div className="w-20 h-20 mx-auto">
                                         <img className="w-14 h-12 rounded-full" src={user.photoURL} alt="" />
                                     </div>
-                                    <p className="text-black font-bold bg-green-800 text-center text-2xl">{user.displayName}</p>
+                                    <p className="text-black font-bold text-center text-2xl">{user.displayName}</p>
                                 </li>
                                 <li>
-                                    <button onClick={handleLogOut} className="btn bg-transparent border-0 text-center font-bold text-black">LogOut</button>
+                                    <button onClick={handleLogOut} className="btn bg-transparent border-0 text-xl    text-center font-bold text-black">LogOut</button>
                                 </li>
                             </ul>
                         </div>
