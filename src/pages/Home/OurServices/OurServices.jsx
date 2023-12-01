@@ -28,6 +28,7 @@ const OurServices = () => {
                 <div className="card md:w-72 bg-[#11e4a5] bg-opacity-25 shadow-xl">
                     <div className="flex justify-center items-center text-5xl h-20 w-20 bg-[#11e4a5] mt-10 mx-auto rounded-full text-white">
                         <TbDental />
+
                     </div>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">Dental Checkup and Consultation</h2>
