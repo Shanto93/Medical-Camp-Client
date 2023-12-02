@@ -1,9 +1,13 @@
 import Swal from "sweetalert2";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { useForm, } from "react-hook-form"
-// import './Feedback.css'
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useReviews from "../../../hooks/useReviews";
+// import './Feedback.css';
 
 const FeedBack = () => {
+    const axiosSecure = useAxiosSecure();
+    const [,refetch] = useReviews();
     const {
         register,
         handleSubmit,
@@ -13,16 +17,10 @@ const FeedBack = () => {
 
     const onSubmit = (data) => {
         // console.log(data)
-        fetch("http://localhost:5000/reviews", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
+        axiosSecure.post('/reviews',data)
+        .then(res => {
+            console.log(res.data);
+            if(res.data.insertedId){
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -30,8 +28,10 @@ const FeedBack = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
-                 reset();
-            });
+                  refetch();
+                  reset();
+            }
+        })
     }
     
     return (

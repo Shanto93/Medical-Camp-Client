@@ -5,18 +5,20 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import useReviews from "../../../hooks/useReviews";
 
 const Testimonials = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews] = useReviews();
+  // const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:5000/reviews')
-      .then(res => res.json())
-      .then(data => setReviews(data))
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://localhost:5000/reviews')
+  //     .then(res => res.json())
+  //     .then(data => setReviews(data))
+  // }, [])
 
   const pagination = {
     clickable: true,
