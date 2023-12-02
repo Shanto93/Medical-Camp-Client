@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import PopularCampDetails from "../pages/Home/PopularCamps/PopularCampLayout/PopularCampDetails/PopularCampDetails";
 import Errorpage from "../components/SectionTitle/Errorpage";
 import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
                 path:'/availableCamps',
                 element:<AvailableCamps></AvailableCamps>,
                 loader:() => fetch('http://localhost:5000/popularcamp')
+            },
+            {
+                path:'/contactUs',
+                element:<ContactUs></ContactUs>
             }
         ]
     },
