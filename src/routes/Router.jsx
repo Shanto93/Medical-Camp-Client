@@ -9,6 +9,8 @@ import PopularCampDetails from "../pages/Home/PopularCamps/PopularCampLayout/Pop
 import Errorpage from "../components/SectionTitle/Errorpage";
 import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import Dashboard from "../layout/Dashboard";
+import Profile from "../pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -44,4 +46,14 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path:'dashboard',
+        element:<Dashboard></Dashboard>,
+        children:[
+            {
+                path:'profile',
+                element: <Profile></Profile>
+            }
+        ]
+    }
 ]);
