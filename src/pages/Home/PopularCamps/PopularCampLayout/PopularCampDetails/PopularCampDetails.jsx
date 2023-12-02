@@ -1,14 +1,18 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import PopularCampDetailsLayout from "./PopularCampDetailsLayout";
 
 const PopularCampDetails = () => {
     const popularCamps = useLoaderData();
-    // console.log(blog);
+    console.log(popularCamps)
     const { _id } = useParams();
-    const camp = popularCamps.filter(camp => camp._id === _id);
-    console.log(camp._id);
+    console.log(_id);
+    const camp = popularCamps.filter(camp => camp._id == _id);
+    console.log(camp);
     return (
         <div>
-            <p>Show Something</p>
+            {
+                camp.map(cam => <PopularCampDetailsLayout key={cam._id} cam={cam}></PopularCampDetailsLayout>)
+            }
 
         </div>
     );

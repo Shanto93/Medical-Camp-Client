@@ -7,6 +7,7 @@ import Login from "../pages/Home/Login/Login";
 import Register from "../pages/Register/Register";
 import PopularCampDetails from "../pages/Home/PopularCamps/PopularCampLayout/PopularCampDetails/PopularCampDetails";
 import Errorpage from "../components/SectionTitle/Errorpage";
+import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 
 export const router = createBrowserRouter([
     {
@@ -21,8 +22,7 @@ export const router = createBrowserRouter([
             {
                 path:'/popularcamp/:_id',
                 element:<PopularCampDetails></PopularCampDetails>,
-                loader: () => fetch('http://localhost:5000/popularcamp'),
-
+                loader: () => fetch('http://localhost:5000/popularcamp')
             },
             {
                 path:'/login',
@@ -32,6 +32,11 @@ export const router = createBrowserRouter([
                 path:'/register',
                 element:<Register></Register>,
             },
+            {
+                path:'/availableCamps',
+                element:<AvailableCamps></AvailableCamps>,
+                loader:() => fetch('http://localhost:5000/popularcamp')
+            }
         ]
     },
 ]);

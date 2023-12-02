@@ -91,8 +91,6 @@ const FeedBack = () => {
                     {errors.details && <span className="text-red-800">Details field is required</span>}
                 </label>
                 {/* errors will return when field validation fails  */}
-
-
                 <input type="submit" className="btn mt-5 w-full font-bold" />
             </form>
         </div>
