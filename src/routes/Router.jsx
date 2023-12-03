@@ -11,6 +11,7 @@ import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import Dashboard from "../layout/Dashboard";
 import Profile from "../pages/Profile/Profile";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 export const router = createBrowserRouter([
     {
@@ -50,9 +51,14 @@ export const router = createBrowserRouter([
         path:'dashboard',
         element:<Dashboard></Dashboard>,
         children:[
+            // Admin routes
             {
-                path:'profile',
+                path:'adminHome',
                 element: <Profile></Profile>
+            },
+            {
+                path:'allUsers',
+                element:<AllUsers></AllUsers>,
             }
         ]
     }

@@ -4,42 +4,53 @@ import { TbRegistered } from "react-icons/tb";
 import { MdOutlinePayments, MdOutlineRateReview } from "react-icons/md";
 
 const Dashboard = () => {
+    const isAdmin = true;
     return (
         <div className="flex">
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-[#a9e1d1]">
                 <ul className="menu p-4">
-                    {/* <li>
+                    {
+                        isAdmin ?
+                            <>
+                                <li>
+                                    <NavLink to='/dashboard/adminHome' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <CgProfile />
+                                        Admin Home
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/allUsers' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <CgProfile />
+                                        All Users
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/addCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <TbRegistered />
+                                            Add Camps
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/manageCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <MdOutlineRateReview />
+                                        Manage Camps
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/manageRegisteredCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <MdOutlinePayments />
+                                        Manage Registered Camps
+                                    </NavLink>
+                                </li>
+                            </>
+                            :
+                            <>
+                            </>
+                    }
 
-                        <NavLink to="/dashboard/profile">
-                            <CgProfile />
-                            Profile
-                        </NavLink>
-                    </li> */}
-                    <li>
-                        <NavLink to='/dashboard/profile' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
-                            <CgProfile />
-                            Profile
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/dashboard/registeredCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
-                            <TbRegistered />
-                            Registered Camps
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/dashboard/feedback' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
-                            <MdOutlineRateReview />
-                            Add Review
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/dashboard/paymentHistory' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
-                            <MdOutlinePayments />
-                            Payment History
-                        </NavLink>
-                    </li>
+
+                    {/* Shared Navlinks */}
 
                     <div className="divider"></div>
 
