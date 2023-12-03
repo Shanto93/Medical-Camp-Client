@@ -15,7 +15,7 @@ const AllUsers = () => {
     })
     const handleDelete = user => {
         Swal.fire({
-            title: "Do you want to delete this user?",
+            title: `Do you want to delete ${user.name}?`,
             text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
@@ -25,20 +25,39 @@ const AllUsers = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/users/${user._id}`)
-                .then(res => {
-                    if(res.data.deletedCount > 0){
-                        refetch();
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "User has been deleted.",
-                            icon: "success"
-                        });
-                    }
-                })
+                    .then(res => {
+                        if (res.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: `${user.name} has been deleted.`,
+                                icon: "success"
+                            });
+                        }
+                    })
 
-                
+
             }
         });
+    }
+
+    const handleMakeAdmin = user => {
+        axiosSecure.patch(`/users/admin/${user._id}`)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${user.name} is an admin now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    refetch();
+                }
+
+            })
     }
 
     return (
@@ -71,9 +90,12 @@ const AllUsers = () => {
                                 <td>{user.name} </td>
                                 <td>{user.email}</td>
                                 <td>
-                                    <button
-                                        className="btn bg-[#11e4a5]"
-                                    ><FaUsers className="text-orange-600 text-xl" /></button>
+                                    {
+                                        user.role === 'admin' ? 'admin' :
+                                            <button onClick={() => handleMakeAdmin(user)}
+                                                className="btn bg-[#11e4a5]"
+                                            ><FaUsers className="text-orange-600 text-xl" /></button>
+                                    }
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(user)}

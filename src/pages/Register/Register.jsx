@@ -17,8 +17,7 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        const camp_name = form.camp_name.value;
-        console.log(name, password, photo, email, camp_name);
+        console.log(name, password, photo, email);
 
         // if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Z\d@$!%*#?&]{8,}$/.test(password)) {
         //     return Swal.fire({
@@ -118,21 +117,6 @@ const Register = () => {
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>
-
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Pick a camp</span>
-                                </label>
-                                <select className="select select-bordered" name="camp_name">
-                                    <option disabled selected>Pick one</option>
-                                    <option>Star Wars</option>
-                                    <option>Harry Potter</option>
-                                    <option>Lord of the Rings</option>
-                                    <option>Planet of the Apes</option>
-                                    <option>Star Trek</option>
-                                </select>
-                            </div>
-
 
                             <div className="form-control">
                                 <button className="btn bg-[#11e4a5] text-white hover:bg-[#77eac7] border-0 mt-2">Register</button>
