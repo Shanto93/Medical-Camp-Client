@@ -2,9 +2,10 @@ import { NavLink, Outlet } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { TbRegistered } from "react-icons/tb";
 import { MdOutlinePayments, MdOutlineRateReview } from "react-icons/md";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
             {/* dashboard side bar */}
