@@ -12,6 +12,8 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import Dashboard from "../layout/Dashboard";
 import Profile from "../pages/Profile/Profile";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import AddCamps from "../pages/Dashboard/AddCamps/AddCamps";
+import AdminRoute from './AdminRoute';
 
 export const router = createBrowserRouter([
     {
@@ -58,7 +60,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:'allUsers',
-                element:<AllUsers></AllUsers>,
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>,
+            },
+            {
+                path:'addCamps',
+                element:<AdminRoute><AddCamps></AddCamps></AdminRoute>,
             }
         ]
     }
