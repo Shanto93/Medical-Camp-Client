@@ -15,6 +15,7 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddCamps from "../pages/Dashboard/AddCamps/AddCamps";
 import AdminRoute from './AdminRoute';
 import ManageCamps from "../pages/Dashboard/ManageCamps/ManageCamps";
+import UpdateCamp from "../pages/Dashboard/UpdateCamp/UpdateCamp";
 
 export const router = createBrowserRouter([
     {
@@ -70,6 +71,11 @@ export const router = createBrowserRouter([
             {
                 path:'manageCamps',
                 element:<AdminRoute><ManageCamps></ManageCamps></AdminRoute>,
+            },
+            {
+                path:'updateCamp/:id',
+                element:<AdminRoute><UpdateCamp></UpdateCamp></AdminRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/popularcamp/${params.id}`)
             }
         ]
     }
