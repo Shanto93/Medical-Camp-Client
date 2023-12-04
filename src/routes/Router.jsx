@@ -10,12 +10,16 @@ import Errorpage from "../components/SectionTitle/Errorpage";
 import AvailableCamps from "../pages/AvailableCamps/AvailableCamps";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import Dashboard from "../layout/Dashboard";
-import Profile from "../pages/Profile/Profile";
+// import Profile from "../pages/Profile/Profile";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddCamps from "../pages/Dashboard/AddCamps/AddCamps";
 import AdminRoute from './AdminRoute';
 import ManageCamps from "../pages/Dashboard/ManageCamps/ManageCamps";
 import UpdateCamp from "../pages/Dashboard/UpdateCamp/UpdateCamp";
+import AdminProfile from "../pages/Dashboard/AdminProfile/AdminProfile";
+import UserProfile from "../pages/Dashboard/UserProfile/UserProfile";
+import PrivateRoute from './PrivateRoute';
+import FeedBack from "../pages/Home/FeedBack/FeedBack";
 
 export const router = createBrowserRouter([
     {
@@ -29,7 +33,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/popularcamp/:_id',
-                element:<PopularCampDetails></PopularCampDetails>,
+                element:<PrivateRoute><PopularCampDetails></PopularCampDetails></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/popularcamp')
             },
             {
@@ -42,7 +46,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/availableCamps',
-                element:<AvailableCamps></AvailableCamps>,
+                element:<PrivateRoute><AvailableCamps></AvailableCamps></PrivateRoute>,
                 loader:() => fetch('http://localhost:5000/popularcamp')
             },
             {
@@ -53,12 +57,21 @@ export const router = createBrowserRouter([
     },
     {
         path:'dashboard',
-        element:<Dashboard></Dashboard>,
+        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
+            // normal users route
+            {
+                path:'userProfile',
+                element:<UserProfile></UserProfile>,
+            },
+            {
+                path:'feedback',
+                element:<FeedBack></FeedBack>,
+            },
             // Admin routes
             {
-                path:'adminHome',
-                element: <Profile></Profile>
+                path:'adminProfile',
+                element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
             },
             {
                 path:'allUsers',

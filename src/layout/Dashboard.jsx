@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { TbRegistered } from "react-icons/tb";
-import { MdOutlinePayments, MdOutlineRateReview } from "react-icons/md";
+import { MdOutlineRateReview } from "react-icons/md";
 import useAdmin from "../hooks/useAdmin";
+import { VscFeedback } from "react-icons/vsc";
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
@@ -15,9 +16,9 @@ const Dashboard = () => {
                         isAdmin ?
                             <>
                                 <li>
-                                    <NavLink to='/dashboard/adminHome' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                    <NavLink to='/dashboard/adminProfile' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
                                         <CgProfile />
-                                        Admin Home
+                                        Admin Profile
                                     </NavLink>
                                 </li>
                                 <li>
@@ -29,7 +30,7 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to='/dashboard/addCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
                                         <TbRegistered />
-                                            Add Camps
+                                        Add Camps
                                     </NavLink>
                                 </li>
                                 <li>
@@ -38,15 +39,27 @@ const Dashboard = () => {
                                         Manage Camps
                                     </NavLink>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <NavLink to='/dashboard/manageRegisteredCamps' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
                                         <MdOutlinePayments />
                                         Manage Registered Camps
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </>
                             :
                             <>
+                                <li>
+                                    <NavLink to='/dashboard/userProfile' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                        <CgProfile />
+                                        User Profile
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/feedback' className={({ isActive }) => isActive ? 'btn bg-[#11e4a5] border-0 text-white ml-3 font-bold hover:bg-[#6aaf9a] btn-sm' : 'btn btn-ghost btn-sm'}>
+                                    <VscFeedback />
+                                        Feedback
+                                    </NavLink>
+                                </li>
                             </>
                     }
 
