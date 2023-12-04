@@ -26,42 +26,6 @@ const AddCamps = () => {
                   })
             }
         })
-        // image upload to imgbb and then get an url
-        // const imageFile = { photo: data.photo[0] }
-        // const res = await axiosPublic.post(image_hosting_api, imageFile, {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //     }
-        // });
-        // if (res.data.success) {
-        //     // now send the menu item data to server with the image bb
-        //     // const campsItem = {
-        //     // camp_name : data.camp_name,
-        //     // photo : res.data.data.display_url,
-        //     // camp_fees : parseFloat(data.camp_fees),
-        //     // scheduled_date : data.scheduled_date,
-        //     // scheduled_time : data.scheduled_time,
-        //     // venue : data.venue,
-        //     // specialized_service : data.specialized_service,
-        //     // healthcare_professionals : data.healthcare_professionals,
-        //     // target_audience : data.target_audience,
-        //     // details : data.details
-        //     // }
-        //     const camps = await axiosSecure.post('/popularcamp',campsItem);
-        //     console.log(camps.data);
-        //     if(camps.data.insertedId){
-        //         // show success message
-        //         Swal.fire({
-        //             position: 'top-end',
-        //             icon: 'success',
-        //             title: 'Data Inserted Successfully',
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //           })
-        //     }
-
-        // }
-
     }
 
     return (

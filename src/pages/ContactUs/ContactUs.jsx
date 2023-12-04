@@ -1,4 +1,15 @@
+import Swal from "sweetalert2";
+
 const ContactUs = () => {
+    const handleSubmit = () => {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Information has been Saved Successfully',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
     return (
         <div className="mx-12">
             <h2 className="text-4xl font-bold text-center">Contact us</h2>
@@ -6,7 +17,7 @@ const ContactUs = () => {
             <p className="mb-5">Your email address will not be published.</p>
 
             <div>
-            <form className="flex justify-center items-center w-full">
+            <form onSubmit={handleSubmit}  className="flex justify-center items-center w-full">
                 <div className="w-full">
                     
                     <div className="md:flex gap-5">
@@ -31,6 +42,8 @@ const ContactUs = () => {
                         </div>
                     </div>
                     <textarea name="Message" placeholder="Message" className="mt-5 border w-full" id="" cols="30" rows="10"></textarea>
+
+                    {/* <button onClick={handleSubmit} className="btn mb-10 w-full mt-7 bg-[#11e4a5] text-white font-bold hover:bg-[#e67e22]" ></button> */}
 
                     <input className="btn mb-10 w-full mt-7 bg-[#11e4a5] text-white font-bold hover:bg-[#e67e22]" type="submit" value="Submit" />
                 </div>
