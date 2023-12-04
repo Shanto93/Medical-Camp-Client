@@ -14,6 +14,7 @@ import Profile from "../pages/Profile/Profile";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddCamps from "../pages/Dashboard/AddCamps/AddCamps";
 import AdminRoute from './AdminRoute';
+import ManageCamps from "../pages/Dashboard/ManageCamps/ManageCamps";
 
 export const router = createBrowserRouter([
     {
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
             {
                 path:'addCamps',
                 element:<AdminRoute><AddCamps></AddCamps></AdminRoute>,
+            },
+            {
+                path:'manageCamps',
+                element:<AdminRoute><ManageCamps></ManageCamps></AdminRoute>,
             }
         ]
     }
